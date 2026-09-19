@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BrainBurst</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 1. Join Form -->
+    <div id="join-section" class="card">
+        <h1 class="logo">BrainBurst</h1>
+        
+        <div class="input-group">
+            <input type="number" id="pin-input" placeholder="Game PIN" class="fat-input" disabled>
+            <input type="text" id="name-input" placeholder="Nickname" class="fat-input" disabled>
+        </div>
+
+        <!-- 10 Avatar Selection Grid -->
+        <div class="avatar-selection">
+            <p>Choose your Avatar:</p>
+            <div class="avatar-grid" id="avatar-grid">
+                
+                <div class="avatar-option selected" data-avatar="monster" data-color="#eb2754">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 2c-4.97 0-9 4.03-9 9v11l3-3 3 3 3-3 3 3 3-3 3 3V11c0-4.97-4.03-9-9-9zm-3 8c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm6 0c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/></svg>
+                </div>
+                
+                <div class="avatar-option" data-avatar="crown" data-color="#f2ce46">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>
+                </div>
+                
+                <div class="avatar-option" data-avatar="rocket" data-color="#12b2e5">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M13.13 22.19l-2.81-2.81 1.41-1.41 2.81 2.81-1.41 1.41zM5.64 12.5l-2.81-2.81 1.41-1.41 2.81 2.81-1.41 1.41zm17.92-11.08c-.03 0-3.15.27-7.46 4.58l-1.04-.15-3.32 3.32c-.41.41-.85 1.1-.96 1.62L9.5 16.5l-4.5 4.5 1.41 1.41 4.5-4.5 5.71-1.28c.51-.11 1.21-.55 1.62-.96l3.32-3.32-.15-1.04c4.32-4.32 4.58-7.44 4.58-7.44-.01-.01-1.43-2.43-2.43-2.43z"/></svg>
+                </div>
+                
+                <div class="avatar-option" data-avatar="gamepad" data-color="#26890c">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm3-3c-.83 0-1.5-.67-1.5-1.5S17.67 8 18.5 8s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                </div>
+                
+                <div class="avatar-option" data-avatar="heart" data-color="#e91e63">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                </div>
+
+                <div class="avatar-option" data-avatar="star" data-color="#ff9800">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+
+                <div class="avatar-option" data-avatar="bear" data-color="#795548">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12,20C12,20 8,20 8,16C8,12 11.3,12.5 12,12.5C12.7,12.5 16,12 16,16C16,20 12,20 12,20M20.3,16A4.8,4.8 0 0,0 21,13.5C21,12 19.7,10.7 18.1,10.7C17.6,10.7 17.2,10.8 16.9,11C15.6,9.2 13.6,8 12,8C10.4,8 8.4,9.2 7.1,11C6.8,10.8 6.4,10.7 5.9,10.7C4.3,10.7 3,12 3,13.5C3,14.4 3.4,15.2 4.1,15.7C4.1,15.7 4,15.8 4,16C4,20 7,22 12,22C17,22 20,20 20,16C20,15.8 19.9,15.7 19.9,15.7C20.6,15.2 21,14.4 21,13.5C21,12.5 20.6,11.6 19.8,11M14,15A1,1 0 0,1 13,16A1,1 0 0,1 12,15A1,1 0 0,1 13,14A1,1 0 0,1 14,15M11,15A1,1 0 0,1 10,16A1,1 0 0,1 9,15A1,1 0 0,1 10,14A1,1 0 0,1 11,15M8.5,4C9.3,4 10.1,4.3 10.6,4.8L9,7C8,6.8 6,7 6,7L4.6,4.8C5.6,4 7,3.5 8.5,4M15.5,4C17,3.5 18.4,4 19.4,4.8L18,7C18,7 16,6.8 15,7L13.4,4.8C13.9,4.3 14.7,4 15.5,4Z"/></svg>
+                </div>
+
+                <div class="avatar-option" data-avatar="bug" data-color="#9c27b0">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M14 12h-4v-2h4v2zm4.2-2.3l2.8-2.8-1.4-1.4-2.8 2.8c-.8-.5-1.7-.8-2.6-.9V4h-2v3.3c-.9.1-1.8.4-2.6.9L6.6 5.4 5.2 6.8l2.8 2.8c-.5.8-.8 1.7-.9 2.6H4v2h3.1c.1.9.4 1.8.9 2.6l-2.8 2.8 1.4 1.4 2.8-2.8c.8.5 1.7.8 2.6.9V22h2v-3.3c.9-.1 1.8-.4 2.6-.9l2.8 2.8 1.4-1.4-2.8-2.8c.5-.8.8-1.7.9-2.6H20v-2h-3.1c-.1-.9-.4-1.8-.9-2.6z"/></svg>
+                </div>
+
+                <div class="avatar-option" data-avatar="leaf" data-color="#8bc34a">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66l.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 11.5s1.75-2 5-3.5C11.5 6 17 8 17 8z"/></svg>
+                </div>
+
+                <div class="avatar-option" data-avatar="trophy" data-color="#3f51b5">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>
+                </div>
+
+            </div>
+        </div>
+        
+        <button id="join-btn" class="fat-btn" disabled>Enter</button>
+        <p id="connection-status" class="status-text">Connecting...</p>
+    </div>
+
+    <!-- 2. Waiting / Results Screen (Hidden by default) -->
+    <div id="waiting-section" class="waiting-screen hidden">
+        <h2 id="waiting-title">You're in!</h2>
+        <p id="waiting-subtitle">Look at the big screen.</p>
+        <h3 id="waiting-score" style="margin-top: 2rem; font-size: 2rem;"></h3>
+    </div>
+
+    <!-- 3. Game Controller Screen (Hidden by default) -->
+    <div id="controller-section" class="controller-screen hidden">
+        <div class="controller-grid">
+            <button class="ctrl-btn color-red" data-index="0">▲</button>
+            <button class="ctrl-btn color-blue" data-index="1">♦</button>
+            <button class="ctrl-btn color-yellow" data-index="2">⬤</button>
+            <button class="ctrl-btn color-green" data-index="3">■</button>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="player.js"></script>
+</body>
+</html>

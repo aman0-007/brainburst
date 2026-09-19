@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BrainBurst - Host</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 1. Lobby Screen -->
+    <div class="lobby-container">
+        <h1 class="logo">BrainBurst</h1>
+        <p id="connection-status" class="status-text">Connecting...</p>
+        
+        <div class="pin-container">
+            <h2>Join at the URL with Game PIN:</h2>
+            <div id="game-pin" class="pin-box">....</div>
+        </div>
+
+        <div class="players-container">
+            <div class="players-header">
+                <h3>Players <span id="player-count">0</span></h3>
+                <button id="start-game-btn" class="start-btn" disabled>Start Game</button>
+            </div>
+            <ul id="player-list" class="player-grid"></ul>
+        </div>
+    </div>
+
+    <!-- 2. Active Game Screen (Hidden by default) -->
+    <div id="game-section" class="game-container hidden">
+        <h2 id="question-text" class="question-text">Question goes here?</h2>
+        
+        <!-- Timer, Next Button, and Answer Stats -->
+        <div class="game-stats">
+            <div class="timer-display" id="timer-display">20</div>
+            <button id="next-btn" class="start-btn hidden" style="margin: 0 2rem;">Next</button>
+            <div class="answer-count">Answers: <span id="answers-received">0</span></div>
+        </div>
+
+        <div class="answer-grid">
+            <div class="answer-card color-red"><span class="shape">▲</span> <span id="ans-0">Answer 1</span></div>
+            <div class="answer-card color-blue"><span class="shape">♦</span> <span id="ans-1">Answer 2</span></div>
+            <div class="answer-card color-yellow"><span class="shape">⬤</span> <span id="ans-2">Answer 3</span></div>
+            <div class="answer-card color-green"><span class="shape">■</span> <span id="ans-3">Answer 4</span></div>
+        </div>
+    </div>
+
+    <!-- 3. Scoreboard Screen (Hidden by default) -->
+    <div id="scoreboard-section" class="game-container hidden">
+        <h2 class="question-text">Top Players</h2>
+        <ul id="leaderboard-list" class="player-grid" style="flex-direction: column; align-items: center;">
+            <!-- Leaders go here -->
+        </ul>
+        <button id="scoreboard-next-btn" class="start-btn" style="margin-top: 2rem;">Next Question</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="host.js"></script>
+</body>
+</html>

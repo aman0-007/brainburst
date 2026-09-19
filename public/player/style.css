@@ -1,0 +1,170 @@
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.logo {
+    color: #46178f;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+.fat-input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-family: inherit;
+    font-weight: 800;
+    text-align: center;
+}
+
+.fat-input:focus { outline: none; border-color: #46178f; }
+
+.fat-btn {
+    width: 100%;
+    background-color: #333333;
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-family: inherit;
+    font-weight: 800;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #000000;
+    transition: transform 0.1s, box-shadow 0.1s;
+    margin-bottom: 1rem;
+}
+
+/* The chunky button click effect */
+.fat-btn:active:not(:disabled) {
+    transform: translateY(6px);
+    box-shadow: none;
+}
+
+.fat-btn:disabled { background-color: #999; box-shadow: 0 6px 0 #666; cursor: not-allowed; }
+
+.status-text { color: #666; font-size: 0.9rem; margin: 0; }
+
+.waiting-screen {
+    background-color: #26890c;
+    color: white;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.waiting-screen h2 { font-size: 3rem; margin-bottom: 0.5rem; font-weight: 800; }
+.hidden { display: none !important; }
+
+/* Avatar Selection Styles */
+.avatar-selection p {
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.avatar-grid {
+    display: flex;
+    flex-wrap: wrap; /* NEW: Allows avatars to spill onto a second row */
+    justify-content: center;
+    gap: 10px; /* NEW: Creates even spacing */
+    margin-bottom: 1.5rem;
+}
+
+.avatar-option {
+    width: 50px; /* Slightly smaller to fit 5 on a row */
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #ccc; 
+    border: 4px solid transparent;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.avatar-option svg { width: 30px; height: 30px; }
+
+.avatar-option.selected {
+    border-color: #46178f;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* The 10 Character Colors */
+.avatar-option[data-avatar="monster"] { background-color: #eb2754; } /* Red */
+.avatar-option[data-avatar="crown"]   { background-color: #f2ce46; } /* Yellow */
+.avatar-option[data-avatar="rocket"]  { background-color: #12b2e5; } /* Light Blue */
+.avatar-option[data-avatar="gamepad"] { background-color: #26890c; } /* Green */
+.avatar-option[data-avatar="heart"]   { background-color: #e91e63; } /* Pink */
+.avatar-option[data-avatar="star"]    { background-color: #ff9800; } /* Orange */
+.avatar-option[data-avatar="bear"]    { background-color: #795548; } /* Brown */
+.avatar-option[data-avatar="bug"]     { background-color: #9c27b0; } /* Purple */
+.avatar-option[data-avatar="leaf"]    { background-color: #8bc34a; } /* Light Green */
+.avatar-option[data-avatar="trophy"]  { background-color: #3f51b5; } /* Indigo */
+
+.controller-screen {
+    height: 100vh;
+    width: 100vw;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center; /* Vertically centers the grid */
+    justify-content: center;
+    background-color: #f2f2f2;
+}
+
+.controller-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1 / 1; /* Forces the buttons to be squares */
+}
+
+.ctrl-btn {
+    border: none;
+    border-radius: 8px;
+    font-size: 5rem;
+    color: white;
+    box-shadow: 0 8px 0 rgba(0,0,0,0.2);
+    transition: transform 0.1s, box-shadow 0.1s;
+    cursor: pointer;
+}
+.ctrl-btn:active {
+    transform: translateY(8px);
+    box-shadow: none;
+}
+.color-red { background-color: #eb2754; }
+.color-blue { background-color: #12b2e5; }
+.color-yellow { background-color: #f2ce46; color: white; }
+.color-green { background-color: #26890c; }
