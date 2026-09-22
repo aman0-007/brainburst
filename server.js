@@ -14,6 +14,9 @@ app.use('/', express.static(path.join(__dirname, 'public/player')));
 // Route 2: Serve the Host UI at /host (e.g., localhost:3000/host)
 app.use('/host', express.static(path.join(__dirname, 'public/host')));
 
+// Route 3: Serve shared assets (sound, haptics, effects)
+app.use('/shared', express.static(path.join(__dirname, 'public/shared')));
+
 const gameManager = require('./gameManager');
 
 // Replace the old io.on('connection') block with this single line:

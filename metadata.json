@@ -1,0 +1,6 @@
+{
+  "name": "BrainBurst",
+  "description": "Real-time multiplayer trivia game with interactive host screen and player buzzer controls",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -2,15 +2,19 @@
   "name": "brainburst",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "echo 'Build complete'",
+    "lint": "node --check server.js gameManager.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^5.2.1",
+    "qrcode": "^1.5.4",
     "socket.io": "^4.8.3"
   }
 }
